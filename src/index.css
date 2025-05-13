@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Dark theme (default) */
+  :root {
+    --bg-root: 220 20% 2%;
+    --bg-elevated: 220 15% 4%;
+    --bg-card: 220 12% 6%;
+
+    --text-primary: 0 0% 96%;
+    --text-secondary: 220 10% 75%;
+    --text-muted: 220 10% 55%;
+
+    /* Y2K silver-blue accent */
+    --accent: 210 55% 68%;
+
+    --success: 142 69% 58%;
+    --error: 0 84% 60%;
+
+    --background: var(--bg-root);
+    --foreground: var(--text-primary);
+    --card: var(--bg-card);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-elevated);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--accent);
+    --primary-foreground: 220 20% 2%;
+    --secondary: var(--bg-elevated);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--bg-elevated);
+    --muted-foreground: var(--text-muted);
+    --border: 220 15% 12%;
+    --input: 220 15% 12%;
+    --ring: var(--accent);
+    --radius: 0.5rem;
+  }
+
+  /* Light theme */
+  .light {
+    --bg-root: 210 20% 98%;
+    --bg-elevated: 210 15% 95%;
+    --bg-card: 210 12% 92%;
+
+    --text-primary: 220 20% 10%;
+    --text-secondary: 220 10% 35%;
+    --text-muted: 220 10% 50%;
+
+    /* Y2K silver-blue accent (darker for light mode) */
+    --accent: 210 60% 42%;
+
+    --background: var(--bg-root);
+    --foreground: var(--text-primary);
+    --card: var(--bg-card);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-elevated);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--accent);
+    --primary-foreground: 210 20% 98%;
+    --secondary: var(--bg-elevated);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--bg-elevated);
+    --muted-foreground: var(--text-muted);
+    --border: 210 15% 85%;
+    --input: 210 15% 85%;
+    --ring: var(--accent);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* Terminal prompt cursor */
+.prompt-cursor::after {
+  content: '█';
+  animation: blink 1s step-end infinite;
+  color: hsl(var(--accent));
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Terminal output block */
+.terminal-output {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Section fade transitions */
+.terminal-section {
+  transition: opacity 0.2s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* Typing line animation - staggered fade in */
+@keyframes typing-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typing-line {
+  opacity: 0;
+  animation: typing-fade 0.3s ease-out forwards;
+}
+
+/* Section entrance animation */
+.animate-section {
+  animation: typing-fade 0.3s ease-out forwards;
+}
+
+/* Metadata text */
+.meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: hsl(var(--text-muted));
+}
+
+/* Hide scrollbar */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--accent) / 0.3);
+  color: hsl(var(--text-primary));
+}
+
+/* GitHub contribution chart - invert white to black */
+.github-chart {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.light .github-chart {
+  filter: none;
+}
