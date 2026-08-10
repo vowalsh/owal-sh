@@ -148,7 +148,7 @@ const Index = () => {
               onClick={() => navigateToSection(0)}
               className="text-[hsl(var(--accent))] hover:opacity-80 transition-opacity"
             >
-              vowalsh@nyc:~$
+              vowalsh@mia:~$
             </button>
             <span className="ml-2 text-foreground">{inputValue || currentCommand.cmd}</span>
             <span className="prompt-cursor"></span>
@@ -352,34 +352,43 @@ const AboutSection = () => (
 const ExperienceSection = () => (
   <div className="terminal-output space-y-6 pb-4">
     <TerminalJob
-      company="Expin"
-      subtitle="The Exposome Intelligence Company"
+      company="various startups"
+      role="contractual basis"
+      period="apr 2026 - present"
+      location="remote"
+      bullets={[
+        "applied ai and ml engineering across early-stage startups on a contractual basis."
+      ]}
+      delay={0}
+    />
+    <TerminalJob
+      company="Stealth"
       role="member of technical staff"
-      period="dec 2025 – apr 2026"
-      location="miami"
+      period="dec 2025 - apr 2026"
+      location="remote"
       bullets={[
         "designed and systematically tested chunking and embedding services for processing scientific text.",
         "productized a semantic retrieval pipeline for patient-specific evidence triangulation.",
         "prototyped administrative portal for scientists to configure system and build graph research store."
       ]}
-      delay={0}
+      delay={1}
     />
     <TerminalJob
       company="Tabs"
       role="member of technical staff"
-      period="aug 2025 – dec 2025"
+      period="aug 2025 - dec 2025"
       location="nyc"
       bullets={[
         "built transaction-invoice matching pipeline: exclusion classifier, merchant-specific rule classifier, and one-to-one matching using LightGBM and scikit-learn.",
         "contributed to contract ingestion pipeline using LlamaCloud for billing term extraction.",
         "integrated Fiddler observability and Datadog monitoring across AI/ML pipelines. established on-call rituals."
       ]}
-      delay={1}
+      delay={2}
     />
     <TerminalJob
       company="OpenGradient"
       role="lead machine learning engineer"
-      period="jul 2024 – aug 2025"
+      period="jul 2024 - aug 2025"
       location="nyc"
       bullets={[
         "lead mle for decentralized ml inference layer on Ethereum.",
@@ -387,12 +396,12 @@ const ExperienceSection = () => (
         "built volatility and spot forecasting models with enhanced linear models, neural networks, and LSTMs. created yield farming portfolio optimization model.",
         "established partnerships with Coinbase & major web3 firms. collaborated with GCP and AWS on cloud computing solutions."
       ]}
-      delay={2}
+      delay={3}
     />
     <TerminalJob
       company="Coinbase"
       role="machine learning engineer"
-      period="jun 2022 – may 2024"
+      period="jun 2022 - may 2024"
       location="nyc"
       bullets={[
         "contributed to maintenance and development of Coinbase's ml platform, aiding transition from legacy architecture to industry-leading third party vendors.",
@@ -401,18 +410,18 @@ const ExperienceSection = () => (
         "ml observability dri: integrated Datadog monitoring across data pipelines, training, and production model servers. implemented model lifecycle metadata store.",
         "purged historical PII data and helped integrate data deletion pipeline. fixed longstanding Airflow2 issues."
       ]}
-      delay={3}
+      delay={4}
     />
     <TerminalJob
       company="Coinbase"
       role="machine learning engineering intern"
-      period="jun 2021 – aug 2021"
+      period="jun 2021 - aug 2021"
       location="sf"
       bullets={[
         "championed responsible AI by implementing observability pipeline capturing insights and metrics from each phase of the ml model lifecycle.",
         "condensed metrics into performance summaries easily ingested by stakeholders to investigate model performance for inference runs."
       ]}
-      delay={4}
+      delay={5}
     />
   </div>
 );
@@ -481,6 +490,7 @@ const EducationSection = () => (
           <p>↳ statistical methods & data analysis</p>
           <p>↳ multivariable calculus & complex analysis</p>
           <p>↳ introduction to ordinary and partial differential equations</p>
+          <p>↳ mathematics of finance</p>
         </div>
       </div>
 
@@ -524,7 +534,7 @@ const ResearchSection = () => (
   <div className="terminal-output">
     <p className="text-foreground typing-line">SSS-RP, Scalable Systems Software Research</p>
     <p className="text-[hsl(var(--text-muted))] mb-3 typing-line" style={{ animationDelay: "0.1s" }}>
-      jun 2020 – may 2022 @ lehigh university
+      jun 2020 - may 2022 @ lehigh university
     </p>
     <div className="text-[hsl(var(--text-secondary))] space-y-1">
       <p className="typing-line" style={{ animationDelay: "0.2s" }}>
