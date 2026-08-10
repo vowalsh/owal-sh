@@ -261,7 +261,7 @@ const Index = () => {
       <footer className="flex-shrink-0 border-t border-border bg-background z-50">
         <div className="max-w-4xl mx-auto px-6 py-2 sm:py-3 flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-2 text-xs">
           <p className="text-[hsl(var(--text-muted))]">vowalsh ~/ 2026</p>
-          <p className="text-[hsl(var(--text-muted))]">last_deploy: 2026-02-06 18:46 EST</p>
+          <p className="text-[hsl(var(--text-muted))]">last_deploy: 2026-08-10 15:08 EST</p>
           <div className="flex items-center gap-4">
             <a
               href="https://github.com/vowalsh/owal-sh"
